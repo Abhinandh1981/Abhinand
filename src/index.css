@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #FF4D00;
+  --color-primary-hover: #E04300;
+  --color-bg: #FBE3E1;
+  --color-surface: #FFF8F5;
+  --color-surface-card: #FFFDFB;
+  --color-surface-subtle: #F8D8D5;
+  --color-dark: #141414;
+  --color-muted: #635E5D;
+}
+
+html {
+  background-color: var(--color-bg);
+  color: var(--color-dark);
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FBE3E1;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF4D00;
+  border-radius: 9999px;
+  border: 2px solid #FBE3E1;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E04300;
+}
+
+/* Text Selection */
+::selection {
+  background: #FF4D00;
+  color: #FFFFFF;
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Typography Enhancements */
+.font-display {
+  font-family: 'Bebas Neue', Anton, sans-serif;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Studio Pill Styling */
+.studio-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #141414;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+}
+.studio-pill:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Card hover glow */
+.studio-card {
+  background: #FFF8F5;
+  border: 1.5px solid rgba(20, 20, 20, 0.08);
+  border-radius: 2rem;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+.studio-card:hover {
+  border-color: rgba(255, 77, 0, 0.3);
+  box-shadow: 0 20px 40px -15px rgba(255, 77, 0, 0.12), 0 10px 25px -10px rgba(20, 20, 20, 0.08);
+}
+
+/* Studio Slate/Graphite Card with Vivid Orange Accent */
+.studio-slate-card {
+  background: #201E1D;
+  color: #FFF8F5;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+.studio-slate-card:hover {
+  border-color: #FF4D00;
+  box-shadow: 0 20px 45px -15px rgba(255, 77, 0, 0.25);
+  transform: translateY(-4px);
+}
+
+/* Studio Concrete Light Gray Card */
+.studio-gray-panel {
+  background: #EAE2DE;
+  border: 1.5px solid rgba(32, 30, 29, 0.12);
+  border-radius: 2rem;
+}
+
+/* Giant Ghost Watermark Number */
+.studio-watermark-num {
+  font-family: 'Bebas Neue', Anton, sans-serif;
+  font-size: 14rem;
+  line-height: 0.8;
+  font-weight: 900;
+  color: rgba(32, 30, 29, 0.04);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Studio Corner Crosshair Mark */
+.crosshair-corner {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+}
+.crosshair-corner::before,
+.crosshair-corner::after {
+  content: '';
+  position: absolute;
+  background-color: currentColor;
+}
+.crosshair-corner::before {
+  top: 4px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+}
+.crosshair-corner::after {
+  left: 4px;
+  top: 0;
+  bottom: 0;
+  width: 1.5px;
+}
+
