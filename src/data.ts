@@ -35,7 +35,7 @@ export const portfolioData: PortfolioData = {
   quickFacts: [
     { label: "Institution", value: "Thejus Engineering College", iconName: "GraduationCap" },
     { label: "Degree & Spec", value: "B.Tech CSE (Artificial Intelligence)", iconName: "BrainCircuit" },
-    { label: "Academic Stage", value: "First Year (2024–2028)", iconName: "Calendar" },
+    { label: "Academic Stage", value: "First Year (2026–2030)", iconName: "Calendar" },
     { label: "Based In", value: "Thrissur, Kerala, India", iconName: "MapPin" },
   ],
 

@@ -22,6 +22,15 @@ const KineticWord: React.FC<{ text: string; className?: string; hoverColor?: str
         <motion.span
           key={i}
           className="inline-block transition-colors cursor-pointer"
+          animate={{
+            y: [0, -4, 0],
+          }}
+          transition={{
+            duration: 2.6,
+            repeat: Infinity,
+            delay: (i % 7) * 0.12,
+            ease: 'easeInOut',
+          }}
           whileHover={{
             y: -16,
             scale: 1.25,
@@ -29,7 +38,6 @@ const KineticWord: React.FC<{ text: string; className?: string; hoverColor?: str
             color: hoverColor,
           }}
           onHoverStart={() => sound.playPluck()}
-          transition={{ type: 'spring', stiffness: 450, damping: 14 }}
         >
           {char === ' ' ? '\u00A0' : char}
         </motion.span>
@@ -104,7 +112,7 @@ export const HeroSection: React.FC = () => {
           className="inline-flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-4 md:mb-6 flex-wrap justify-center px-2"
         >
           <span className="font-display text-sm sm:text-xl md:text-2xl tracking-widest text-[#FF4D00] uppercase font-bold">
-            THEJUS 2024–28
+            THEJUS 2026–30
           </span>
           <span className="text-[#141414]/30 font-bold">/</span>
           <span className="text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-wider text-[#635E5D]">
@@ -182,6 +190,23 @@ export const HeroSection: React.FC = () => {
             <span className="text-[#FF4D00]">📍</span>
             <span>THEJUS · THRISSUR</span>
           </div>
+        </div>
+
+        {/* Mobile Moving Font Ribbon (Continuous Kinetic Marquee in Mobile View) */}
+        <div className="block sm:hidden w-full max-w-sm mx-auto overflow-hidden my-2.5 py-1.5 px-3 bg-[#141414] text-white rounded-full border border-white/15 shadow-lg">
+          <MarqueeStrip
+            items={[
+              "ABHINAND SANTHOSH",
+              "THEJUS 2026–30",
+              "CREATIVE CODER",
+              "CSE (AI) SPECIALIST",
+              "PYTHON & ML",
+              "INTERACTIVE DESIGN"
+            ]}
+            className="bg-transparent py-0.5 text-white"
+            itemClassName="font-display text-[11px] font-black tracking-widest uppercase text-white px-2.5"
+            separator="✦"
+          />
         </div>
 
         {/* Walking Characters Staging Area */}
