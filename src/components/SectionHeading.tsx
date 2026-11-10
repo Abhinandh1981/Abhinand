@@ -26,7 +26,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       </div>
 
       {/* Main Condensed Display Title */}
-      <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-[#141414] tracking-tight leading-[0.9] uppercase">
+      <h2 className="font-display text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-[#141414] tracking-tight leading-[0.95] sm:leading-[0.9] uppercase">
         {title}
       </h2>
 

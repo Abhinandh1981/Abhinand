@@ -64,10 +64,10 @@ export const HeroSection: React.FC = () => {
       className="relative min-h-screen pt-28 md:pt-36 flex flex-col justify-between overflow-hidden bg-[#FBE3E1]"
     >
       {/* Background Decorative Squiggle Lines (Left & Right) */}
-      <div className="absolute top-16 -left-12 md:left-6 w-48 md:w-80 pointer-events-none opacity-85 z-0">
+      <div className="absolute top-16 -left-12 md:left-6 w-32 sm:w-48 md:w-80 pointer-events-none opacity-40 sm:opacity-75 md:opacity-85 z-0">
         <HeroSquiggle variant="left" />
       </div>
-      <div className="absolute top-20 -right-16 md:right-4 w-52 md:w-88 pointer-events-none opacity-85 z-0">
+      <div className="absolute top-20 -right-12 md:right-4 w-36 sm:w-52 md:w-88 pointer-events-none opacity-40 sm:opacity-75 md:opacity-85 z-0">
         <HeroSquiggle variant="right" />
       </div>
 
@@ -94,20 +94,20 @@ export const HeroSection: React.FC = () => {
       </motion.div>
 
       {/* Central Content Area */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-10 w-full text-center my-auto">
+      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 md:px-10 w-full text-center my-auto">
         
         {/* Top Studio Label */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 mb-4 md:mb-6"
+          className="inline-flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-4 md:mb-6 flex-wrap justify-center px-2"
         >
-          <span className="font-display text-xl md:text-2xl tracking-widest text-[#FF4D00] uppercase font-bold">
+          <span className="font-display text-sm sm:text-xl md:text-2xl tracking-widest text-[#FF4D00] uppercase font-bold">
             THEJUS 2024–28
           </span>
           <span className="text-[#141414]/30 font-bold">/</span>
-          <span className="text-xs md:text-sm font-bold uppercase tracking-wider text-[#635E5D]">
+          <span className="text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-wider text-[#635E5D]">
             CREATIVE AI &amp; CODE STUDIO
           </span>
         </motion.div>
@@ -115,7 +115,7 @@ export const HeroSection: React.FC = () => {
         {/* Massive Headline with Overlapping Dark Pills */}
         <div className="relative inline-block w-full max-w-5xl mx-auto">
           {/* Main Display Headline with Kinetic Bouncing Letters */}
-          <h1 className="font-display text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] font-black text-[#FF4D00] uppercase tracking-tight leading-[0.88] select-none">
+          <h1 className="font-display text-[2.5rem] xs:text-[3.1rem] sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10.5rem] font-black text-[#FF4D00] uppercase tracking-tighter sm:tracking-tight leading-[0.92] sm:leading-[0.88] select-none text-center">
             <span className="block drop-shadow-sm">
               <KineticWord text="HI, I'M ABHINAND" hoverColor="#141414" />
             </span>
@@ -127,13 +127,13 @@ export const HeroSection: React.FC = () => {
             </span>
           </h1>
 
-          {/* Overlapping Black Pills (Two26 Studio Signature) */}
+          {/* Desktop Overlapping Black Pills (Hidden on Mobile to Prevent Obscuring Words) */}
           {/* Pill 1: Top Left overlap */}
           <motion.div
             initial={{ scale: 0, rotate: -15 }}
             animate={{ scale: 1, rotate: -6 }}
             transition={{ delay: 0.3, type: 'spring', stiffness: 300, damping: 20 }}
-            className="absolute top-[8%] left-[6%] sm:left-[12%] md:left-[16%] z-20"
+            className="hidden sm:block absolute top-[8%] left-[6%] sm:left-[12%] md:left-[16%] z-20"
           >
             <div className="studio-pill bg-[#141414] text-white text-[11px] md:text-xs py-1.5 px-3.5 rounded-full shadow-lg border border-white/10 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#FF4D00] animate-pulse" />
@@ -146,7 +146,7 @@ export const HeroSection: React.FC = () => {
             initial={{ scale: 0, rotate: 12 }}
             animate={{ scale: 1, rotate: 4 }}
             transition={{ delay: 0.45, type: 'spring', stiffness: 300, damping: 20 }}
-            className="absolute top-[38%] right-[4%] sm:right-[10%] md:right-[12%] z-20"
+            className="hidden sm:block absolute top-[38%] right-[4%] sm:right-[10%] md:right-[12%] z-20"
           >
             <div className="studio-pill bg-[#141414] text-white text-[11px] md:text-xs py-1.5 px-3.5 rounded-full shadow-lg border border-white/10 flex items-center gap-2">
               <Code2 className="w-3.5 h-3.5 text-[#FF4D00]" />
@@ -159,7 +159,7 @@ export const HeroSection: React.FC = () => {
             initial={{ scale: 0, rotate: -8 }}
             animate={{ scale: 1, rotate: -3 }}
             transition={{ delay: 0.6, type: 'spring', stiffness: 300, damping: 20 }}
-            className="absolute bottom-[22%] left-[10%] sm:left-[18%] md:left-[22%] z-20"
+            className="hidden sm:block absolute bottom-[22%] left-[10%] sm:left-[18%] md:left-[22%] z-20"
           >
             <div className="studio-pill bg-[#141414] text-white text-[11px] md:text-xs py-1.5 px-3.5 rounded-full shadow-lg border border-white/10 flex items-center gap-2">
               <span className="text-[#FF4D00]">📍</span>
@@ -168,12 +168,28 @@ export const HeroSection: React.FC = () => {
           </motion.div>
         </div>
 
+        {/* Mobile Responsive Pill Row (Clean flex row so text stays 100% visible on phones) */}
+        <div className="flex sm:hidden flex-wrap items-center justify-center gap-1.5 mt-3 mb-2 px-2">
+          <div className="studio-pill bg-[#141414] text-white text-[10px] py-1 px-3 rounded-full shadow-md border border-white/10 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FF4D00] animate-pulse" />
+            <span>FIRST-YEAR · CSE (AI)</span>
+          </div>
+          <div className="studio-pill bg-[#141414] text-white text-[10px] py-1 px-3 rounded-full shadow-md border border-white/10 flex items-center gap-1.5">
+            <Code2 className="w-3 h-3 text-[#FF4D00]" />
+            <span>CREATIVE CODER</span>
+          </div>
+          <div className="studio-pill bg-[#141414] text-white text-[10px] py-1 px-3 rounded-full shadow-md border border-white/10 flex items-center gap-1.5">
+            <span className="text-[#FF4D00]">📍</span>
+            <span>THEJUS · THRISSUR</span>
+          </div>
+        </div>
+
         {/* Walking Characters Staging Area */}
-        <div className="relative mt-2 md:mt-4 max-w-4xl mx-auto flex items-end justify-center gap-4 sm:gap-12 md:gap-16 z-20">
+        <div className="relative mt-2 md:mt-4 max-w-4xl mx-auto flex flex-col sm:flex-row items-center sm:items-end justify-center gap-3 sm:gap-8 md:gap-14 z-20">
           
-          {/* Walking Orange Tabby Cat on the Left */}
+          {/* Walking Orange Tabby Cat (Desktop Flank) */}
           <div
-            className="w-24 sm:w-32 md:w-36 mb-2 cursor-pointer relative group"
+            className="hidden sm:block w-24 sm:w-28 md:w-36 mb-2 cursor-pointer relative group flex-shrink-0"
             onClick={() => triggerBubble(tabbyQuotes, setTabbyBubble)}
             title="Click me!"
           >
@@ -193,14 +209,14 @@ export const HeroSection: React.FC = () => {
             <OrangeTabbyCat />
           </div>
 
-          {/* Centerpiece: Real Profile Visual (Image B in Greyish Style + Image C Sculpture Overlay Outside/Back + 3D Movable Tilt) */}
-          <div className="flex-1 w-full max-w-2xl mx-auto z-20">
+          {/* Centerpiece: Real Profile Visual */}
+          <div className="w-full max-w-xs sm:max-w-md md:max-w-2xl mx-auto z-20">
             <HeroProfileVisual />
           </div>
 
-          {/* Walking Tuxedo Cat on the Right */}
+          {/* Walking Tuxedo Cat (Desktop Flank) */}
           <div
-            className="w-24 sm:w-32 md:w-36 mb-2 cursor-pointer relative group"
+            className="hidden sm:block w-24 sm:w-28 md:w-36 mb-2 cursor-pointer relative group flex-shrink-0"
             onClick={() => triggerBubble(tuxedoQuotes, setTuxedoBubble)}
             title="Click me!"
           >
@@ -218,6 +234,49 @@ export const HeroSection: React.FC = () => {
               )}
             </AnimatePresence>
             <TuxedoCat />
+          </div>
+
+          {/* Mobile Cats Row: Flanking side-by-side neatly beneath profile */}
+          <div className="flex sm:hidden items-center justify-center gap-6 mt-1 mb-2">
+            <div
+              className="w-18 cursor-pointer relative group"
+              onClick={() => triggerBubble(tabbyQuotes, setTabbyBubble)}
+              title="Click me!"
+            >
+              <AnimatePresence>
+                {tabbyBubble && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.8 }}
+                    animate={{ opacity: 1, y: -20, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.8 }}
+                    className="absolute -top-9 left-1/2 -translate-x-1/2 bg-[#141414] text-white text-[10px] font-bold px-2.5 py-1 rounded-full whitespace-nowrap shadow-lg z-30 pointer-events-none"
+                  >
+                    {tabbyBubble}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+              <OrangeTabbyCat />
+            </div>
+
+            <div
+              className="w-18 cursor-pointer relative group"
+              onClick={() => triggerBubble(tuxedoQuotes, setTuxedoBubble)}
+              title="Click me!"
+            >
+              <AnimatePresence>
+                {tuxedoBubble && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.8 }}
+                    animate={{ opacity: 1, y: -20, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.8 }}
+                    className="absolute -top-9 left-1/2 -translate-x-1/2 bg-[#141414] text-white text-[10px] font-bold px-2.5 py-1 rounded-full whitespace-nowrap shadow-lg z-30 pointer-events-none"
+                  >
+                    {tuxedoBubble}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+              <TuxedoCat />
+            </div>
           </div>
 
         </div>
