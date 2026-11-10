@@ -4,6 +4,7 @@ import { Sparkles, ArrowDown, Code2, Terminal, Cpu } from 'lucide-react';
 import { portfolioData } from '../data';
 import { StudentCharacter } from '../assets/illustrations/StudentCharacter';
 import { OrangeTabbyCat, TuxedoCat } from '../assets/illustrations/Cats';
+import { HeroProfileVisual } from '../components/HeroProfileVisual';
 import { HeroSquiggle } from '../assets/squiggles/HeroSquiggle';
 import { MarqueeStrip } from '../components/MarqueeStrip';
 import { MagneticButton } from '../components/MagneticButton';
@@ -192,26 +193,9 @@ export const HeroSection: React.FC = () => {
             <OrangeTabbyCat />
           </div>
 
-          {/* Walking Student Character in the Center */}
-          <div
-            className="w-48 sm:w-60 md:w-72 cursor-pointer relative group"
-            onClick={() => triggerBubble(studentQuotes, setStudentBubble)}
-            title="Click me!"
-          >
-            <AnimatePresence>
-              {studentBubble && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10, scale: 0.8 }}
-                  animate={{ opacity: 1, y: -25, scale: 1 }}
-                  exit={{ opacity: 0, y: -15, scale: 0.8 }}
-                  className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#FF4D00] text-white text-xs font-bold px-3.5 py-1.5 rounded-full whitespace-nowrap shadow-2xl z-30 pointer-events-none"
-                >
-                  {studentBubble}
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#FF4D00]" />
-                </motion.div>
-              )}
-            </AnimatePresence>
-            <StudentCharacter />
+          {/* Centerpiece: Real Profile Visual (Image B in Greyish Style + Image C Sculpture Overlay + 3D Movable Tilt) */}
+          <div className="flex-1 max-w-md mx-auto z-20">
+            <HeroProfileVisual />
           </div>
 
           {/* Walking Tuxedo Cat on the Right */}
