@@ -193,8 +193,8 @@ export const HeroSection: React.FC = () => {
             <OrangeTabbyCat />
           </div>
 
-          {/* Centerpiece: Real Profile Visual (Image B in Greyish Style + Image C Sculpture Overlay + 3D Movable Tilt) */}
-          <div className="flex-1 max-w-md mx-auto z-20">
+          {/* Centerpiece: Real Profile Visual (Image B in Greyish Style + Image C Sculpture Overlay Outside/Back + 3D Movable Tilt) */}
+          <div className="flex-1 w-full max-w-2xl mx-auto z-20">
             <HeroProfileVisual />
           </div>
 
